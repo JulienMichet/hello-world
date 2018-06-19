@@ -1,14 +1,17 @@
 <?php
 /*
   Template Name: Consultation
+
+  NANAdldbj
+  
  */
 // récupération des paramétres de page
 $id_site = ($wp_query->query_vars['site']) ? $wp_query->query_vars['site'] : 0;
 $id_type = ($wp_query->query_vars['typecons']) ? $wp_query->query_vars['typecons'] : 0;
 $id_page = "consultation" ;
 
-// Traite les données POST pour éviter un double POST 
-// Obligatoire avant tout code HTML 
+// Traite les données POST pour éviter un double POST
+// Obligatoire avant tout code HTML
 echo do_shortcode('[eviter_double_POST site=' . $id_site . ' type=' . $id_type . ' page=' . $id_page . ']');
 
 // Récupère l'entéte de la page du thème (fonction wordpress)
@@ -21,9 +24,9 @@ get_header();
             <!--center><img src="/wp-content/themes/twentyfifteen-child/images/logos/logo_5.jpg" border="0" width="232" height="60"></center-->
 		<!--div id="smlk-image" style="background-image: url(/illustration/<?php //echo $id_site; ?>/);"-->
 		<div id="smlk-image" style="background-image: url(/wp-content/themes/twentyfifteen-child/images/photos_site/photo_site_<?php echo $id_site; ?>.png);">
-        
+
 			<!--img src="/wp-content/themes/twentyfifteen-child/images/photos_site/photo_site_3.png"-->
-            
+
         </div>
         <div id="smlk-address">
 
@@ -31,7 +34,7 @@ get_header();
 
         </div>
         <div id="smlk-settings">
-          <?php echo do_shortcode('[parametres_site site=' . $id_site . ']'); ?>      
+          <?php echo do_shortcode('[parametres_site site=' . $id_site . ']'); ?>
         </div>
     </header>
 
@@ -79,11 +82,11 @@ get_header();
                 elseif ($id_type === 'Schema')
                 {
                   echo do_shortcode('[schema site=' . $id_site . ']');
-                } 
+                }
                 elseif ($id_type === 'Commande')
                 {
                   echo do_shortcode('[commande site=' . $id_site . ']');
-                } 
+                }
                 elseif ($id_type === 'Parametres')
                 {
                   echo do_shortcode('[parametres_modif site=' . $id_site . ']');
